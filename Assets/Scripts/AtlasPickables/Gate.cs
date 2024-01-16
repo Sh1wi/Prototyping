@@ -2,29 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class GateOpen : MonoBehaviour
+public class GateOpen : MonoBehaviour
+{
+    [SerializeField] private KeyCollectable doorKey;
+    [SerializeField] private bool isDoorOpen = false;
+
+    private void Start()
     {
-        [SerializeField] KeyCollectable doorKey;
-        bool isDoorOpen = false;
-
-        private void OnTriggerEnter(Collider other)
+        if (isDoorOpen == true)
         {
-            Debug.Log("Door Entered");
-            if (doorKey.isKeyCollected == true && isDoorOpen == false)
-            {
-                transform.Find("door").GetComponent<Collider>().enabled = false;
-                transform.Find("door").GetComponent<MeshRenderer>().enabled = false;
-            isDoorOpen = true;
-            }
+            OpenDoor();
         }
-
-        private void OnTriggerExit(Collider other)
+        else
         {
-            if (isDoorOpen == true)
-            {
-                transform.Find("door").GetComponent<Collider>().enabled = true;
-                transform.Find("door").GetComponent<MeshRenderer>().enabled = true;
-                isDoorOpen = false;
-            }
+            CloseDoor();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Door Entered");
+        if (doorKey.isKeyCollected == true && isDoorOpen == false)
+        {
+            OpenDoor(); 
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isDoorOpen == true)
+        {
+           CloseDoor();
+        }
+    }
+
+    void OpenDoor()
+    {
+        GetComponent<Collider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        isDoorOpen = true;
+    }
+
+    void CloseDoor()
+    {
+        GetComponent<Collider>().enabled = true;
+        GetComponent<MeshRenderer>().enabled = true;
+        isDoorOpen = false;
+    }
+
+
+}

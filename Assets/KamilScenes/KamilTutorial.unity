@@ -6694,6 +6694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorKey: {fileID: 2917891820678394414}
+  isDoorOpen: 0
 --- !u!65 &559347485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44124,7 +44125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vcamOwner: {fileID: 5944681549547015097}
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 2.01, z: -4.5}
   m_XDamping: 1
@@ -44135,12 +44135,6 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
-  <HideOffsetInInspector>k__BackingField: 1
-  m_PreviousTargetPosition: {x: 18.8, y: 53.17, z: 182.98639}
-  m_PreviousReferenceOrientation: {x: 0, y: 0, z: 0, w: 1}
-  m_targetOrientationOnAssign: {x: -0, y: -0, z: -0, w: 1}
-  m_PreviousOffset: {x: 0, y: 2.01, z: -4.5}
-  m_previousTarget: {fileID: 4290372417600005808}
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
@@ -44149,9 +44143,6 @@ MonoBehaviour:
     m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
-    m_LastUpdateTime: 0.0532119
-    mLastAxisInputTime: 0.053212
-    mRecenteringVelocity: 0
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
@@ -44170,26 +44161,12 @@ MonoBehaviour:
       m_enabled: 0
       m_WaitTime: 1
       m_RecenteringTime: 2
-      m_LastUpdateTime: 0
-      mLastAxisInputTime: 0
-      mRecenteringVelocity: 0
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
-    m_CurrentSpeed: 0
-    m_LastUpdateTime: 0
-    m_LastUpdateFrame: 0
-    m_InputAxisIndex: 0
-    <ValueRangeLocked>k__BackingField: 0
-    <HasRecentering>k__BackingField: 0
   m_LegacyRadius: 3.4028235e+38
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
   m_HeadingIsSlave: 1
-  m_LastTargetPosition: {x: 18.8, y: 53.17, z: 182.98639}
-  m_TargetRigidBody: {fileID: 6496880543898788570}
-  m_PreviousTarget: {fileID: 4290372417600005808}
-  m_LastCameraPosition: {x: 18.8, y: 55.179996, z: 178.48639}
-  m_LastHeading: 0
 --- !u!4 &445554102712730669
 Transform:
   m_ObjectHideFlags: 3
@@ -44343,7 +44320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Movment
-      and camera","summary":null,"pan":{"x":273.9695,"y":64.02132},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":-144.0},"guid":"82ba1bfa-7301-428e-a646-747fabca41c3","$version":"A","$type":"Unity.VisualScripting.Start","$id":"10"},{"chainable":false,"member":{"name":"maxAngularVelocity","parameterTypes":null,"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null,"input":{"$content":80.0,"$type":"System.Single"}},"position":{"x":38.0,"y":-211.0},"guid":"e30fec8c-8f23-4ea9-a816-c0fcb6f6cf9e","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"12"},{"defaultValues":{},"position":{"x":564.0,"y":390.0},"guid":"9a4ab5db-7b3d-4149-a5f9-3cd64cec7a68","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"15"},{"defaultValues":{},"position":{"x":311.0,"y":415.0},"guid":"38010f34-2456-4879-919d-7900cc1db932","$version":"A","$type":"Unity.VisualScripting.Vector3Normalize","$id":"17"},{"defaultValues":{"b":{"$content":-1.0,"$type":"System.Single"}},"position":{"x":-148.0,"y":544.0},"guid":"e1b9f2cb-9f2e-401d-a0c4-6a450ffd90c0","$version":"A","$type":"Unity.VisualScripting.ScalarMultiply","$id":"19"},{"type":"System.Single","value":{"$content":90.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":351.0,"y":550.0},"guid":"71e23e9c-1736-4b86-8481-1811ceb245b1","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"21"},{"chainable":false,"parameterNames":["axisName"],"member":{"name":"GetAxisRaw","parameterTypes":["System.String"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%axisName":{"$content":"Horizontal","$type":"System.String"}},"position":{"x":-392.0,"y":528.0},"guid":"90d662b6-b2d8-4505-b294-a776f4d158da","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"23"},{"chainable":false,"parameterNames":["torque","mode"],"member":{"name":"AddTorque","parameterTypes":["UnityEngine.Vector3","UnityEngine.ForceMode"],"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null,"%torque":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"%mode":{"$content":"Force","$type":"UnityEngine.ForceMode"}},"position":{"x":1117.0,"y":60.0},"guid":"d3cd320b-9664-474c-bff1-66824954d1a2","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"27"},{"chainable":false,"parameterNames":["x","y","z"],"member":{"name":".ctor","parameterTypes":["System.Single","System.Single","System.Single"],"targetType":"UnityEngine.Vector3","targetTypeName":"UnityEngine.Vector3","$version":"A"},"defaultValues":{"%x":{"$content":0.0,"$type":"System.Single"},"%y":{"$content":0.0,"$type":"System.Single"},"%z":{"$content":0.0,"$type":"System.Single"}},"position":{"x":79.0,"y":396.0},"guid":"9fb6ad6d-2262-44e3-a273-ff3453b02952","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"31"},{"defaultValues":{},"position":{"x":730.0,"y":232.0},"guid":"5bf842ef-6c89-4fff-99a9-3cdb6630975d","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"35"},{"chainable":false,"parameterNames":["axisName"],"member":{"name":"GetAxisRaw","parameterTypes":["System.String"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%axisName":{"$content":"Vertical","$type":"System.String"}},"position":{"x":-396.0,"y":365.0},"guid":"8c16e7ad-7de8-41c2-9459-361e2f5b2762","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"37"},{"member":{"name":"main","parameterTypes":null,"targetType":"UnityEngine.Camera","targetTypeName":"UnityEngine.Camera","$version":"A"},"defaultValues":{},"position":{"x":-511.0,"y":223.0},"guid":"7e2b19ef-0044-4792-9268-ff0142584e40","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"41"},{"member":{"name":"rotation","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-256.0,"y":166.0},"guid":"0d5b0824-d287-469e-903b-61a62bd2359d","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"44"},{"member":{"name":"eulerAngles","parameterTypes":null,"targetType":"UnityEngine.Quaternion","targetTypeName":"UnityEngine.Quaternion","$version":"A"},"defaultValues":{},"position":{"x":-14.0,"y":182.0},"guid":"f9330957-84af-457d-93eb-588ab845c99a","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"47"},{"member":{"name":"y","parameterTypes":null,"targetType":"UnityEngine.Vector3","targetTypeName":"UnityEngine.Vector3","$version":"A"},"defaultValues":{"target":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":260.0,"y":183.0},"guid":"1813dbff-4d2f-4dd0-a2f4-72e350386fa6","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"50"},{"chainable":false,"parameterNames":["x","y","z"],"member":{"name":"Euler","parameterTypes":["System.Single","System.Single","System.Single"],"targetType":"UnityEngine.Quaternion","targetTypeName":"UnityEngine.Quaternion","$version":"A"},"defaultValues":{"%x":{"$content":0.0,"$type":"System.Single"},"%y":{"$content":0.0,"$type":"System.Single"},"%z":{"$content":0.0,"$type":"System.Single"}},"position":{"x":507.0,"y":157.0},"guid":"b25af28a-5154-460c-9d90-707672f590b0","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"53"},{"defaultValues":{"input":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":913.0,"y":237.0},"guid":"40eaadcd-2a19-4a35-a597-7cea4045edd1","$version":"A","$type":"Unity.VisualScripting.Vector3PerSecond","$id":"57"},{"coroutine":false,"defaultValues":{},"position":{"x":118.0,"y":64.0},"guid":"f07f2785-8595-46d8-9e53-a9436c5a9762","$version":"A","$type":"Unity.VisualScripting.FixedUpdate","$id":"59"},{"sourceUnit":{"$ref":"59"},"sourceKey":"trigger","destinationUnit":{"$ref":"27"},"destinationKey":"enter","guid":"acc80677-48b0-4447-9178-38f9d4b81963","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"assign","guid":"a6dcbc94-3890-4137-934d-4dc8dd5fa49c","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"19"},"sourceKey":"product","destinationUnit":{"$ref":"31"},"destinationKey":"%z","guid":"41e31527-9a16-41cd-afc1-33f1c25137d3","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"57"},"sourceKey":"output","destinationUnit":{"$ref":"27"},"destinationKey":"%torque","guid":"aa9b2696-2dfb-473a-afcc-fb5103f75c83","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"53"},"sourceKey":"result","destinationUnit":{"$ref":"35"},"destinationKey":"a","guid":"d7fb88a9-631b-4dda-9358-dbb0b14ae095","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"31"},"sourceKey":"result","destinationUnit":{"$ref":"17"},"destinationKey":"input","guid":"e5360a77-1da0-4ca8-b8f4-7ddec7d5f5f5","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"17"},"sourceKey":"output","destinationUnit":{"$ref":"15"},"destinationKey":"a","guid":"ce4796ec-e937-4929-9d8b-54a31879761e","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"23"},"sourceKey":"result","destinationUnit":{"$ref":"19"},"destinationKey":"a","guid":"685987c8-65c8-43c4-82d3-9baac88fae9b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"47"},"sourceKey":"value","destinationUnit":{"$ref":"50"},"destinationKey":"target","guid":"0879d327-1c74-4e5b-9f72-a3e6603d3d02","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"37"},"sourceKey":"result","destinationUnit":{"$ref":"31"},"destinationKey":"%x","guid":"0ff950e3-7587-44af-b7ec-e8b7388dade6","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"41"},"sourceKey":"value","destinationUnit":{"$ref":"44"},"destinationKey":"target","guid":"167746e8-b6b7-49eb-b232-0bd41957796f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"50"},"sourceKey":"value","destinationUnit":{"$ref":"53"},"destinationKey":"%y","guid":"67cc46ea-0df8-48b3-8af1-a3aa8052d629","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"21"},"sourceKey":"output","destinationUnit":{"$ref":"15"},"destinationKey":"b","guid":"88f3af66-3479-4f20-8a3a-7434a042f110","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"product","destinationUnit":{"$ref":"35"},"destinationKey":"b","guid":"07f77181-c7dd-4f60-b3a8-087fde8cd4de","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"44"},"sourceKey":"value","destinationUnit":{"$ref":"47"},"destinationKey":"target","guid":"8976749f-8e9d-4b11-8e85-38d2a000506d","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"35"},"sourceKey":"product","destinationUnit":{"$ref":"57"},"destinationKey":"input","guid":"b875c94b-7f80-4f6d-9b4b-04d074ddb624","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+      and camera","summary":null,"pan":{"x":273.9695,"y":64.02132},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":-144.0},"guid":"82ba1bfa-7301-428e-a646-747fabca41c3","$version":"A","$type":"Unity.VisualScripting.Start","$id":"10"},{"defaultValues":{"input":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":913.0,"y":237.0},"guid":"40eaadcd-2a19-4a35-a597-7cea4045edd1","$version":"A","$type":"Unity.VisualScripting.Vector3PerSecond","$id":"12"},{"chainable":false,"parameterNames":["x","y","z"],"member":{"name":"Euler","parameterTypes":["System.Single","System.Single","System.Single"],"targetType":"UnityEngine.Quaternion","targetTypeName":"UnityEngine.Quaternion","$version":"A"},"defaultValues":{"%x":{"$content":0.0,"$type":"System.Single"},"%y":{"$content":0.0,"$type":"System.Single"},"%z":{"$content":0.0,"$type":"System.Single"}},"position":{"x":507.0,"y":157.0},"guid":"b25af28a-5154-460c-9d90-707672f590b0","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"member":{"name":"y","parameterTypes":null,"targetType":"UnityEngine.Vector3","targetTypeName":"UnityEngine.Vector3","$version":"A"},"defaultValues":{"target":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":260.0,"y":183.0},"guid":"1813dbff-4d2f-4dd0-a2f4-72e350386fa6","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"18"},{"member":{"name":"eulerAngles","parameterTypes":null,"targetType":"UnityEngine.Quaternion","targetTypeName":"UnityEngine.Quaternion","$version":"A"},"defaultValues":{},"position":{"x":-14.0,"y":182.0},"guid":"f9330957-84af-457d-93eb-588ab845c99a","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"21"},{"member":{"name":"rotation","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-256.0,"y":166.0},"guid":"0d5b0824-d287-469e-903b-61a62bd2359d","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"24"},{"member":{"name":"main","parameterTypes":null,"targetType":"UnityEngine.Camera","targetTypeName":"UnityEngine.Camera","$version":"A"},"defaultValues":{},"position":{"x":-511.0,"y":223.0},"guid":"7e2b19ef-0044-4792-9268-ff0142584e40","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"27"},{"chainable":false,"parameterNames":["axisName"],"member":{"name":"GetAxisRaw","parameterTypes":["System.String"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%axisName":{"$content":"Vertical","$type":"System.String"}},"position":{"x":-396.0,"y":365.0},"guid":"8c16e7ad-7de8-41c2-9459-361e2f5b2762","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"30"},{"coroutine":false,"defaultValues":{},"position":{"x":118.0,"y":64.0},"guid":"f07f2785-8595-46d8-9e53-a9436c5a9762","$version":"A","$type":"Unity.VisualScripting.FixedUpdate","$id":"34"},{"chainable":false,"parameterNames":["x","y","z"],"member":{"name":".ctor","parameterTypes":["System.Single","System.Single","System.Single"],"targetType":"UnityEngine.Vector3","targetTypeName":"UnityEngine.Vector3","$version":"A"},"defaultValues":{"%x":{"$content":0.0,"$type":"System.Single"},"%y":{"$content":0.0,"$type":"System.Single"},"%z":{"$content":0.0,"$type":"System.Single"}},"position":{"x":79.0,"y":396.0},"guid":"9fb6ad6d-2262-44e3-a273-ff3453b02952","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"36"},{"chainable":false,"parameterNames":["torque","mode"],"member":{"name":"AddTorque","parameterTypes":["UnityEngine.Vector3","UnityEngine.ForceMode"],"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null,"%torque":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"%mode":{"$content":"Force","$type":"UnityEngine.ForceMode"}},"position":{"x":1117.0,"y":60.0},"guid":"d3cd320b-9664-474c-bff1-66824954d1a2","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"40"},{"chainable":false,"parameterNames":["axisName"],"member":{"name":"GetAxisRaw","parameterTypes":["System.String"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%axisName":{"$content":"Horizontal","$type":"System.String"}},"position":{"x":-392.0,"y":528.0},"guid":"90d662b6-b2d8-4505-b294-a776f4d158da","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"44"},{"type":"System.Single","value":{"$content":90.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":351.0,"y":550.0},"guid":"71e23e9c-1736-4b86-8481-1811ceb245b1","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"48"},{"defaultValues":{"b":{"$content":-1.0,"$type":"System.Single"}},"position":{"x":-148.0,"y":544.0},"guid":"e1b9f2cb-9f2e-401d-a0c4-6a450ffd90c0","$version":"A","$type":"Unity.VisualScripting.ScalarMultiply","$id":"50"},{"defaultValues":{},"position":{"x":311.0,"y":415.0},"guid":"38010f34-2456-4879-919d-7900cc1db932","$version":"A","$type":"Unity.VisualScripting.Vector3Normalize","$id":"52"},{"defaultValues":{},"position":{"x":564.0,"y":390.0},"guid":"9a4ab5db-7b3d-4149-a5f9-3cd64cec7a68","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"54"},{"defaultValues":{},"position":{"x":730.0,"y":232.0},"guid":"5bf842ef-6c89-4fff-99a9-3cdb6630975d","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"56"},{"chainable":false,"member":{"name":"maxAngularVelocity","parameterTypes":null,"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null,"input":{"$content":80.0,"$type":"System.Single"}},"position":{"x":38.0,"y":-211.0},"guid":"e30fec8c-8f23-4ea9-a816-c0fcb6f6cf9e","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"58"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"58"},"destinationKey":"assign","guid":"a6dcbc94-3890-4137-934d-4dc8dd5fa49c","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"34"},"sourceKey":"trigger","destinationUnit":{"$ref":"40"},"destinationKey":"enter","guid":"acc80677-48b0-4447-9178-38f9d4b81963","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"24"},"sourceKey":"value","destinationUnit":{"$ref":"21"},"destinationKey":"target","guid":"8976749f-8e9d-4b11-8e85-38d2a000506d","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"50"},"sourceKey":"product","destinationUnit":{"$ref":"36"},"destinationKey":"%z","guid":"41e31527-9a16-41cd-afc1-33f1c25137d3","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"value","destinationUnit":{"$ref":"14"},"destinationKey":"%y","guid":"67cc46ea-0df8-48b3-8af1-a3aa8052d629","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"27"},"sourceKey":"value","destinationUnit":{"$ref":"24"},"destinationKey":"target","guid":"167746e8-b6b7-49eb-b232-0bd41957796f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"12"},"sourceKey":"output","destinationUnit":{"$ref":"40"},"destinationKey":"%torque","guid":"aa9b2696-2dfb-473a-afcc-fb5103f75c83","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"21"},"sourceKey":"value","destinationUnit":{"$ref":"18"},"destinationKey":"target","guid":"0879d327-1c74-4e5b-9f72-a3e6603d3d02","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"44"},"sourceKey":"result","destinationUnit":{"$ref":"50"},"destinationKey":"a","guid":"685987c8-65c8-43c4-82d3-9baac88fae9b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"48"},"sourceKey":"output","destinationUnit":{"$ref":"54"},"destinationKey":"b","guid":"88f3af66-3479-4f20-8a3a-7434a042f110","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"36"},"sourceKey":"result","destinationUnit":{"$ref":"52"},"destinationKey":"input","guid":"e5360a77-1da0-4ca8-b8f4-7ddec7d5f5f5","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"result","destinationUnit":{"$ref":"56"},"destinationKey":"a","guid":"d7fb88a9-631b-4dda-9358-dbb0b14ae095","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"54"},"sourceKey":"product","destinationUnit":{"$ref":"56"},"destinationKey":"b","guid":"07f77181-c7dd-4f60-b3a8-087fde8cd4de","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"52"},"sourceKey":"output","destinationUnit":{"$ref":"54"},"destinationKey":"a","guid":"ce4796ec-e937-4929-9d8b-54a31879761e","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"result","destinationUnit":{"$ref":"36"},"destinationKey":"%x","guid":"0ff950e3-7587-44af-b7ec-e8b7388dade6","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"56"},"sourceKey":"product","destinationUnit":{"$ref":"12"},"destinationKey":"input","guid":"b875c94b-7f80-4f6d-9b4b-04d074ddb624","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!33 &2884019316790159497
 MeshFilter:
@@ -44504,24 +44481,18 @@ MonoBehaviour:
     m_Style: 1
     m_Time: 2
     m_CustomCurve:
+      serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
-  m_OutputCamera: {fileID: 3552884993406236151}
-  m_TargetOverride: {fileID: 0}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  m_LastFrameUpdated: 90
-  mNextFrameId: 1
-  mActiveCameraPreviousFrameGameObject: {fileID: 83816696199415408}
 --- !u!81 &3120298860786422960
 AudioListener:
   m_ObjectHideFlags: 0
@@ -44637,7 +44608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vcamOwner: {fileID: 5944681549547015097}
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
@@ -44653,11 +44623,6 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
-  <TrackedPoint>k__BackingField: {x: 18.8, y: 53.17, z: 182.98639}
-  m_CameraPosPrevFrame: {x: 18.8, y: 55.179996, z: 178.48639}
-  m_LookAtPrevFrame: {x: 18.8, y: 53.17, z: 182.98639}
-  m_ScreenOffsetPrevFrame: {x: 0.00000024048938, y: 0.000002204434}
-  m_CameraOrientationPrevFrame: {x: 0.2084981, y: -0.000000018814532, z: 0.0000000040109436, w: 0.9780228}
 --- !u!4 &4290372417600005808
 Transform:
   m_ObjectHideFlags: 0
@@ -44717,7 +44682,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vcamOwner: {fileID: 4768126151674100990}
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 2.01, z: -4.5}
   m_XDamping: 1
@@ -44728,12 +44692,6 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
-  <HideOffsetInInspector>k__BackingField: 1
-  m_PreviousTargetPosition: {x: 18.8, y: 53.17, z: 182.98639}
-  m_PreviousReferenceOrientation: {x: 0, y: 0, z: 0, w: 1}
-  m_targetOrientationOnAssign: {x: -0, y: -0, z: -0, w: 1}
-  m_PreviousOffset: {x: 0, y: 2.01, z: -4.5}
-  m_previousTarget: {fileID: 4290372417600005808}
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
@@ -44742,9 +44700,6 @@ MonoBehaviour:
     m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
-    m_LastUpdateTime: 0.0532457
-    mLastAxisInputTime: 0.0532458
-    mRecenteringVelocity: 0
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
@@ -44763,26 +44718,12 @@ MonoBehaviour:
       m_enabled: 0
       m_WaitTime: 1
       m_RecenteringTime: 2
-      m_LastUpdateTime: 0
-      mLastAxisInputTime: 0
-      mRecenteringVelocity: 0
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
-    m_CurrentSpeed: 0
-    m_LastUpdateTime: 0
-    m_LastUpdateFrame: 0
-    m_InputAxisIndex: 0
-    <ValueRangeLocked>k__BackingField: 0
-    <HasRecentering>k__BackingField: 0
   m_LegacyRadius: 3.4028235e+38
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
   m_HeadingIsSlave: 1
-  m_LastTargetPosition: {x: 18.8, y: 53.17, z: 182.98639}
-  m_TargetRigidBody: {fileID: 6496880543898788570}
-  m_PreviousTarget: {fileID: 4290372417600005808}
-  m_LastCameraPosition: {x: 18.8, y: 55.179996, z: 178.48639}
-  m_LastHeading: 0
 --- !u!114 &4660101086357344958
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -44795,7 +44736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vcamOwner: {fileID: 8945278596452112816}
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
@@ -44811,11 +44751,6 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
-  <TrackedPoint>k__BackingField: {x: 18.8, y: 53.17, z: 182.98639}
-  m_CameraPosPrevFrame: {x: 18.8, y: 55.179996, z: 178.48639}
-  m_LookAtPrevFrame: {x: 18.8, y: 53.17, z: 182.98639}
-  m_ScreenOffsetPrevFrame: {x: 4.163446, y: -0.000003943412}
-  m_CameraOrientationPrevFrame: {x: 0.1728339, y: 0.000000016947448, z: -0.0000000029738474, w: 0.984951}
 --- !u!114 &4720485179044702865
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -44849,25 +44784,9 @@ MonoBehaviour:
   - m_Follow
   - m_StandbyUpdate
   m_LockStageInInspector: 00000000
-  m_ValidatingStreamVersion: 20170927
-  m_OnValidateCalled: 1
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_ActivationId: 0
   m_StandbyUpdate: 2
-  <mExtensions>k__BackingField: []
-  <PreviousStateIsValid>k__BackingField: 1
-  m_WasStarted: 1
-  mSlaveStatusUpdated: 1
-  m_parentVcam: {fileID: 6261572944461740433}
-  m_QueuePriority: 10
-  m_blendStartPosition: 0
-  m_CachedFollowTarget: {fileID: 4290372417600005808}
-  m_CachedFollowTargetVcam: {fileID: 0}
-  m_CachedLookAtTarget: {fileID: 4290372417600005808}
-  m_CachedLookAtTargetVcam: {fileID: 0}
-  <FollowTargetChanged>k__BackingField: 0
-  <LookAtTargetChanged>k__BackingField: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -44881,22 +44800,14 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    m_OrthoFromCamera: 0
-    m_PhysicalFromCamera: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   m_LegacyBlendHint: 0
-  m_ComponentPipeline:
-  - {fileID: 4494007413697223456}
-  - {fileID: 8689773696750217682}
   m_ComponentOwner: {fileID: 853139083340674208}
-  mCachedLookAtTarget: {fileID: 4290372417600005808}
-  mCachedLookAtTargetVcam: {fileID: 0}
 --- !u!33 &4811109031063617977
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44958,25 +44869,9 @@ MonoBehaviour:
   - m_Follow
   - m_StandbyUpdate
   m_LockStageInInspector: 00000000
-  m_ValidatingStreamVersion: 20170927
-  m_OnValidateCalled: 1
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_ActivationId: 0
   m_StandbyUpdate: 2
-  <mExtensions>k__BackingField: []
-  <PreviousStateIsValid>k__BackingField: 1
-  m_WasStarted: 1
-  mSlaveStatusUpdated: 1
-  m_parentVcam: {fileID: 6261572944461740433}
-  m_QueuePriority: 10
-  m_blendStartPosition: 0
-  m_CachedFollowTarget: {fileID: 4290372417600005808}
-  m_CachedFollowTargetVcam: {fileID: 0}
-  m_CachedLookAtTarget: {fileID: 4290372417600005808}
-  m_CachedLookAtTargetVcam: {fileID: 0}
-  <FollowTargetChanged>k__BackingField: 0
-  <LookAtTargetChanged>k__BackingField: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -44990,22 +44885,14 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    m_OrthoFromCamera: 0
-    m_PhysicalFromCamera: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   m_LegacyBlendHint: 0
-  m_ComponentPipeline:
-  - {fileID: 326914479606232015}
-  - {fileID: 4283379628474983999}
   m_ComponentOwner: {fileID: 8037556938351153705}
-  mCachedLookAtTarget: {fileID: 4290372417600005808}
-  mCachedLookAtTargetVcam: {fileID: 0}
 --- !u!1 &6203413174417646964
 GameObject:
   m_ObjectHideFlags: 0
@@ -45040,25 +44927,9 @@ MonoBehaviour:
   m_ExcludedPropertiesInInspector:
   - m_Script
   m_LockStageInInspector: 
-  m_ValidatingStreamVersion: 20170927
-  m_OnValidateCalled: 1
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_ActivationId: 3
   m_StandbyUpdate: 2
-  <mExtensions>k__BackingField: []
-  <PreviousStateIsValid>k__BackingField: 1
-  m_WasStarted: 1
-  mSlaveStatusUpdated: 1
-  m_parentVcam: {fileID: 0}
-  m_QueuePriority: 10
-  m_blendStartPosition: 0
-  m_CachedFollowTarget: {fileID: 4290372417600005808}
-  m_CachedFollowTargetVcam: {fileID: 0}
-  m_CachedLookAtTarget: {fileID: 4290372417600005808}
-  m_CachedLookAtTargetVcam: {fileID: 0}
-  <FollowTargetChanged>k__BackingField: 0
-  <LookAtTargetChanged>k__BackingField: 0
   m_LookAt: {fileID: 4290372417600005808}
   m_Follow: {fileID: 4290372417600005808}
   m_CommonLens: 0
@@ -45073,15 +44944,12 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    m_OrthoFromCamera: 0
-    m_PhysicalFromCamera: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   m_LegacyBlendHint: 0
   m_YAxis:
     Value: 0.5
@@ -45099,24 +44967,12 @@ MonoBehaviour:
       m_enabled: 0
       m_WaitTime: 1
       m_RecenteringTime: 2
-      m_LastUpdateTime: 0
-      mLastAxisInputTime: 0
-      mRecenteringVelocity: 0
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
-    m_CurrentSpeed: 0
-    m_LastUpdateTime: 0
-    m_LastUpdateFrame: 0
-    m_InputAxisIndex: 1
-    <ValueRangeLocked>k__BackingField: 1
-    <HasRecentering>k__BackingField: 0
   m_YAxisRecentering:
     m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
-    m_LastUpdateTime: 83.11019
-    mLastAxisInputTime: 83.11019
-    mRecenteringVelocity: 0
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
@@ -45135,17 +44991,8 @@ MonoBehaviour:
       m_enabled: 0
       m_WaitTime: 1
       m_RecenteringTime: 2
-      m_LastUpdateTime: 0
-      mLastAxisInputTime: 0
-      mRecenteringVelocity: 0
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
-    m_CurrentSpeed: 0
-    m_LastUpdateTime: 0
-    m_LastUpdateFrame: 0
-    m_InputAxisIndex: 0
-    <ValueRangeLocked>k__BackingField: 0
-    <HasRecentering>k__BackingField: 0
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
@@ -45154,9 +45001,6 @@ MonoBehaviour:
     m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
-    m_LastUpdateTime: 83.11025
-    mLastAxisInputTime: 83.11025
-    mRecenteringVelocity: 0
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_BindingMode: 4
@@ -45169,44 +45013,10 @@ MonoBehaviour:
   - m_Height: 0.19
     m_Radius: 2.15
   m_LegacyHeadingBias: 3.4028235e+38
-  mUseLegacyRigDefinitions: 0
-  mIsDestroyed: 0
   m_Rigs:
   - {fileID: 5944681549547015097}
   - {fileID: 4768126151674100990}
   - {fileID: 8945278596452112816}
-  mOrbitals:
-  - {fileID: 326914479606232015}
-  - {fileID: 4494007413697223456}
-  - {fileID: 8601136263447388317}
-  m_CachedXAxisHeading: 0
-  m_LastHeadingUpdateFrame: 90
-  m_CachedOrbits:
-  - m_Height: 3.67
-    m_Radius: 2.15
-  - m_Height: 2.01
-    m_Radius: 4.5
-  - m_Height: 0.19
-    m_Radius: 2.15
-  m_CachedTension: 0.2
-  m_CachedKnots:
-  - {x: 0, y: 0.152, z: -1.72, w: 0}
-  - {x: 0, y: 0.19, z: -2.15, w: 0}
-  - {x: 0, y: 2.01, z: -4.5, w: 0}
-  - {x: 0, y: 3.67, z: -2.15, w: 0}
-  - {x: 0, y: 2.936, z: -1.72, w: 0}
-  m_CachedCtrl1:
-  - {x: 0, y: 0.016000032, z: -1.5685717, w: 0}
-  - {x: 0, y: 0.49999994, z: -2.882857, w: 0}
-  - {x: 0, y: 2.7640002, z: -4.5, w: 0}
-  - {x: 0, y: 3.8240001, z: -1.4171429, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  m_CachedCtrl2:
-  - {x: 0, y: -0.119999945, z: -1.4171431, w: 0}
-  - {x: 0, y: 1.2559998, z: -4.5, w: 0}
-  - {x: 0, y: 3.516, z: -2.8828573, w: 0}
-  - {x: 0, y: 3.38, z: -1.5685714, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &6496880543898788570
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45278,7 +45088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vcamOwner: {fileID: 8945278596452112816}
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 2.01, z: -4.5}
   m_XDamping: 1
@@ -45289,12 +45098,6 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
-  <HideOffsetInInspector>k__BackingField: 1
-  m_PreviousTargetPosition: {x: 18.8, y: 53.17, z: 182.98639}
-  m_PreviousReferenceOrientation: {x: 0, y: 0, z: 0, w: 1}
-  m_targetOrientationOnAssign: {x: -0, y: -0, z: -0, w: 1}
-  m_PreviousOffset: {x: 0, y: 2.01, z: -4.5}
-  m_previousTarget: {fileID: 4290372417600005808}
   m_Heading:
     m_Definition: 2
     m_VelocityFilterStrength: 4
@@ -45303,9 +45106,6 @@ MonoBehaviour:
     m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
-    m_LastUpdateTime: 0.0532796
-    mLastAxisInputTime: 0.0532796
-    mRecenteringVelocity: 0
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
@@ -45324,26 +45124,12 @@ MonoBehaviour:
       m_enabled: 0
       m_WaitTime: 1
       m_RecenteringTime: 2
-      m_LastUpdateTime: 0
-      mLastAxisInputTime: 0
-      mRecenteringVelocity: 0
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
-    m_CurrentSpeed: 0
-    m_LastUpdateTime: 0
-    m_LastUpdateFrame: 0
-    m_InputAxisIndex: 0
-    <ValueRangeLocked>k__BackingField: 0
-    <HasRecentering>k__BackingField: 0
   m_LegacyRadius: 3.4028235e+38
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
   m_HeadingIsSlave: 1
-  m_LastTargetPosition: {x: 18.8, y: 53.17, z: 182.98639}
-  m_TargetRigidBody: {fileID: 6496880543898788570}
-  m_PreviousTarget: {fileID: 4290372417600005808}
-  m_LastCameraPosition: {x: 18.8, y: 55.179996, z: 178.48639}
-  m_LastHeading: 0
 --- !u!114 &8689773696750217682
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -45356,7 +45142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vcamOwner: {fileID: 4768126151674100990}
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
@@ -45372,11 +45157,6 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
-  <TrackedPoint>k__BackingField: {x: 18.8, y: 53.17, z: 182.98639}
-  m_CameraPosPrevFrame: {x: 18.8, y: 55.179996, z: 178.48639}
-  m_LookAtPrevFrame: {x: 18.8, y: 53.17, z: 182.98639}
-  m_ScreenOffsetPrevFrame: {x: 0.0000019736756, y: 0.0000027884134}
-  m_CameraOrientationPrevFrame: {x: 0.20849809, y: -0.000000023798714, z: 0.000000005073488, w: 0.9780228}
 --- !u!114 &8945278596452112816
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -45398,25 +45178,9 @@ MonoBehaviour:
   - m_Follow
   - m_StandbyUpdate
   m_LockStageInInspector: 00000000
-  m_ValidatingStreamVersion: 20170927
-  m_OnValidateCalled: 1
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_ActivationId: 0
   m_StandbyUpdate: 2
-  <mExtensions>k__BackingField: []
-  <PreviousStateIsValid>k__BackingField: 1
-  m_WasStarted: 1
-  mSlaveStatusUpdated: 1
-  m_parentVcam: {fileID: 6261572944461740433}
-  m_QueuePriority: 10
-  m_blendStartPosition: 0
-  m_CachedFollowTarget: {fileID: 4290372417600005808}
-  m_CachedFollowTargetVcam: {fileID: 0}
-  m_CachedLookAtTarget: {fileID: 4290372417600005808}
-  m_CachedLookAtTargetVcam: {fileID: 0}
-  <FollowTargetChanged>k__BackingField: 0
-  <LookAtTargetChanged>k__BackingField: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -45430,22 +45194,14 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    m_OrthoFromCamera: 0
-    m_PhysicalFromCamera: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   m_LegacyBlendHint: 0
-  m_ComponentPipeline:
-  - {fileID: 8601136263447388317}
-  - {fileID: 4660101086357344958}
   m_ComponentOwner: {fileID: 5911984099396502990}
-  mCachedLookAtTarget: {fileID: 4290372417600005808}
-  mCachedLookAtTargetVcam: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
