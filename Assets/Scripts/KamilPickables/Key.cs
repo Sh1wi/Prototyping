@@ -15,11 +15,12 @@ public class Key : MonoBehaviour
         return keyType;
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && collision.gameObject.tag == "Player")
         //print("Door Open!");
         {
+            collision.GetComponent<InventoryManager1>().AddKey(keyType);
             //KeyCollector keyCollector = collision.gameObject.GetComponent<KeyCollector>();
             //keyCollector.keys += 1; // private variable therfore not accesible
             //keyCollector.AddKey(1);

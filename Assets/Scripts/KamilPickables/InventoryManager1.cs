@@ -8,7 +8,7 @@ using UnityEngine;
 public class InventoryManager1 : MonoBehaviour
 {
     public event EventHandler OnKeysChanged;
-    private List<Key.KeyType> keyList;
+    [SerializeField] private List<Key.KeyType> keyList;
     private void Awake()
     {
         keyList = new List<Key.KeyType>();
@@ -34,7 +34,7 @@ public class InventoryManager1 : MonoBehaviour
     {
         return keyList.Contains(keyType);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Key key = collision.GetComponent<Key>();
         if (key != null)
