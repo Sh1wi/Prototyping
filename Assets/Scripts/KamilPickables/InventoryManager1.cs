@@ -40,7 +40,7 @@ public class InventoryManager1 : MonoBehaviour
         if (key != null)
         {
             AddKey(key.GetKeyType());
-            //Destroy(key.gameObject);
+            Destroy(key.gameObject);
 
         }
         Door keyDoor = collision.GetComponent<Door>();
