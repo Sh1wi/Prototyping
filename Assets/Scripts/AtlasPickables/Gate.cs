@@ -14,7 +14,7 @@ using UnityEngine;
             {
                 transform.Find("door").GetComponent<Collider>().enabled = false;
                 transform.Find("door").GetComponent<MeshRenderer>().enabled = false;
-                isDoorOpen = true;
+            isDoorOpen = true;
             }
         }
 
