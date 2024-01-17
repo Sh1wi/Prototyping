@@ -7,7 +7,11 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] private Key.KeyType keyType;
+ 
     //[SerializeField] private Key3.KeyType keyType1;
+
+
+
     public Key.KeyType GetKeyType() 
     { 
         return keyType;
