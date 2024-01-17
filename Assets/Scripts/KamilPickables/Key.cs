@@ -20,7 +20,7 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && collision.gameObject.tag == "Player")
         print("Door Open!");
-        {
+        1{
             collision.GetComponent<InventoryManager1>().AddKey(keyType);
             //KeyCollector keyCollector = collision.gameObject.GetComponent<KeyCollector>();
             //keyCollector.keys += 1; // private variable therfore not accesible
