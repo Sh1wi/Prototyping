@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class InventoryManager1 : MonoBehaviour
 {
+   
     public event EventHandler OnKeysChanged;
     [SerializeField] private List<Key.KeyType> keyList;
+   
     private void Awake()
     {
         keyList = new List<Key.KeyType>();
@@ -52,7 +55,11 @@ public class InventoryManager1 : MonoBehaviour
                 keyDoor.OpenDoor();
                 
             }
+            
         }
 
+
+
     }
+    
 }
