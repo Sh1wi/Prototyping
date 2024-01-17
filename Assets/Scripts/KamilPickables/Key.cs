@@ -5,6 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [SerializeField] private KeyType keyType;
+    
     public enum KeyType
     {
         RedKey
@@ -18,7 +19,7 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && collision.gameObject.tag == "Player")
-        //print("Door Open!");
+        print("Door Open!");
         {
             collision.GetComponent<InventoryManager1>().AddKey(keyType);
             //KeyCollector keyCollector = collision.gameObject.GetComponent<KeyCollector>();
@@ -27,4 +28,5 @@ public class Key : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
 }
