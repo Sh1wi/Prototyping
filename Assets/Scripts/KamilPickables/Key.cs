@@ -8,7 +8,8 @@ public class Key : MonoBehaviour
     
     public enum KeyType
     {
-        RedKey
+        RedKey,
+        BlueKey
       
     }
     public KeyType GetKeyType()
